@@ -10,12 +10,12 @@ export default defineConfig({
     strictPort: false,
 
     allowedHosts: [
-      'smart-task-planner-production-3e23.up.railway.app'
+      'frontend-production-e864.up.railway.app'
     ],
 
     proxy: {
       '/api': {
-        target: 'https://smart-task-planner-backend-production.up.railway.app',
+        target: 'https://backend-production-21d4.up.railway.app/',
         changeOrigin: true,
         secure: true,
       },
