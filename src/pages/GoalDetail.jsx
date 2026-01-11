@@ -77,13 +77,17 @@ const GoalDetail = () => {
     const visited = new Set();
     
     const calculateLevel = (taskName, currentLevel = 0) => {
-      if (visited.has(taskName)) return;
-      visited.add(taskName);
+      // if (visited.has(taskName)) return;
+      // visited.add(taskName);
+
+      if (levels[taskName] >= currentLevel) return;
       
       const task = taskMap[taskName];
       if (!task) return;
       
-      levels[taskName] = Math.max(levels[taskName] || 0, currentLevel);
+      // levels[taskName] = Math.max(levels[taskName] || 0, currentLevel);
+
+      levels[taskName] = currentLevel;
       
       // Find tasks that depend on this task
       tasks.forEach(t => {
